@@ -1,9 +1,9 @@
 .navbar-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 5px;
+  position: fixed;
+  top: 0;
+  margin-top: 30px;
+  z-index: 1000;
 }
 
 .navbar-ul {

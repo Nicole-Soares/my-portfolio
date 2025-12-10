@@ -1,12 +1,17 @@
-import Navbar from "../../components/navbar/Navbar"
 import "./Portfolio.css";
-
-export default function Portfolio(){
-    return(
-        <div className="portfolio-container">
-            <Navbar/>
-            <h1 className="portfolio-name">Hello im Nicole.</h1>
-            <h2 className="portfolio-description">Im a full stack web developer</h2>
-        </div>
-    )
+import Home from "../../components/Home/Home";
+import About from "../../components/About/About";
+export default function Portfolio() {
+  return (
+    <div className="portfolio-container">
+        <section id="Home">
+        <Home/>
+        </section>
+     <section id="About">
+     <About />
+     </section>
+     
+      
+    </div>
+  );
 }
