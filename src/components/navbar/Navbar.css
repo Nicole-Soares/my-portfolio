@@ -1,0 +1,36 @@
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+.navbar-ul {
+  border-radius: 30px;
+  border: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;            /* espacio entre icono y texto */
+    cursor: pointer;
+  }
+  
+  .navbar-icon {
+    font-size: 18px;     /* tamaño del icono */
+  }
+  
+li {
+  color: black;
+  list-style-type: none;
+}
