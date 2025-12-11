@@ -1,33 +1,38 @@
 import { GoArrowDown } from "react-icons/go";
 import "./Home.css";
+import { translations } from "../../i18n/translations";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export default function Home() {
+  const { language } = useLanguage();
 
-    const handleScrollToAbout = () =>{
-        // Obtenemos la referencia al elemento 'About' usando su ID
-        const aboutSection = document.getElementById('About');
-        
-        if (aboutSection) {
-            // Desplazamos la vista hasta ese elemento con un efecto suave
-            aboutSection.scrollIntoView({
-                behavior: 'smooth' 
-            });
-        }
+  const handleScrollToAbout = () => {
+    // agarramos el documento con ese id
+    const aboutSection = document.getElementById("about");
+
+    if (aboutSection) {
+      // si existe se desplaza
+      aboutSection.scrollIntoView({
+        behavior: "smooth",
+      });
     }
-    
+  };
+
   return (
     <div className="home-container">
       <h1 className="portfolio-name">
-        Hello, I'm <span className="word-feature">Nicole</span>.
+        {translations[language].greeting}
+        <span className="word-feature"> {translations[language].name}</span>.
       </h1>
 
-      <h2 className="portfolio-description">I'm a full stack web developer.</h2>
+      <h2 className="portfolio-description">
+        {" "}
+        {translations[language].tagline}
+      </h2>
 
-      <button 
-                className="button-work" 
-                onClick={handleScrollToAbout} 
-            >
-        View my work <GoArrowDown />
+      <button className="button-work" onClick={handleScrollToAbout}>
+        {translations[language].cta_button}
+        <GoArrowDown />
       </button>
     </div>
   );

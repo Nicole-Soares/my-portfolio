@@ -131,3 +131,8 @@
     to { transform: rotateX(360deg); }
   }
   
+  .loader-container,
+  .grid-container,
+  .grid-container * {
+      pointer-events: none !important;
+  }

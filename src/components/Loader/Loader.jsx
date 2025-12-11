@@ -1,6 +1,10 @@
+import { useLanguage } from "../../hooks/useLanguage";
+import { translations } from "../../i18n/translations";
 import "./Loader.css";
 
 export default function Loader() {
+
+  const {language} = useLanguage();
   return (
     <>
       {/* Fondo 3D */}
@@ -18,7 +22,7 @@ export default function Loader() {
 
       {/* Loader centrado */}
       <div className="loader-container">
-        <h1 className="loader-title">Bienvenido</h1>
+        <h1 className="loader-title">{translations[language].welcome}</h1>
         <div className="loader-bar">
           <div className="loader-fill"></div>
         </div>
