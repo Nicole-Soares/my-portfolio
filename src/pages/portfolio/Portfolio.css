@@ -1,12 +1,10 @@
-.portfolio-container{
+.portfolio-container {
     width: 100%;
-    height: 100%;
-}
-
-.portfolio-name{
-    color: white;
-}
-
-.porfolio-description{
-    color: white;
+    min-height: 100vh; /*una pantalla minimo*/
+    height: auto; /*puede crecer lo que quiera*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
 }

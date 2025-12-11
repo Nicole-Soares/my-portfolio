@@ -1,12 +1,18 @@
-import Navbar from "../../components/navbar/Navbar"
 import "./Portfolio.css";
+import Home from "../../components/Home/Home";
+import About from "../../components/About/About";
 
-export default function Portfolio(){
-    return(
-        <div className="portfolio-container">
-            <Navbar/>
-            <h1 className="portfolio-name">Hello im Nicole.</h1>
-            <h2 className="portfolio-description">Im a full stack web developer</h2>
-        </div>
-    )
+//here we have our components with id because they are in the same page, we need id for scroll
+export default function Portfolio() {
+
+  return (
+    <div className="portfolio-container">
+      <section id="home">
+        <Home />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+    </div>
+  );
 }

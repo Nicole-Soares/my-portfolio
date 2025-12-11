@@ -1,27 +1,44 @@
+import { useLanguage } from "../../hooks/useLanguage";
+import { translations } from "../../i18n/translations";
 import "./Navbar.css";
 import { FiHome, FiUser, FiFolder, FiMail } from "react-icons/fi";
 
-export default function Navbar(){
-    return(
-        <div className="navbar-container">
-            <ul className="navbar-ul">
+export default function Navbar({ onScrollToSection }) {
+  const { language } = useLanguage();
+
+  return (
+    <div className="navbar-container">
+      <ul className="navbar-ul">
+
         <li>
-          <FiHome className="navbar-icon" />
-          <span>Home</span>
+          <button onClick={() => onScrollToSection("home")} className="nav-btn">
+            <FiHome className="navbar-icon" />
+            {translations[language].home}
+          </button>
         </li>
+
         <li>
-          <FiUser className="navbar-icon" />
-          <span>About</span>
+          <button onClick={() => onScrollToSection("about")} className="nav-btn">
+            <FiUser className="navbar-icon" />
+            {translations[language].about}
+          </button>
         </li>
+
         <li>
-          <FiFolder className="navbar-icon" />
-          <span>Projects</span>
+          <button className="nav-btn">
+            <FiFolder className="navbar-icon" />
+            {translations[language].projects}
+          </button>
         </li>
+
         <li>
-          <FiMail className="navbar-icon" />
-          <span>Contact</span>
+          <button className="nav-btn">
+            <FiMail className="navbar-icon" />
+            {translations[language].contact}
+          </button>
         </li>
+
       </ul>
-        </div>
-    )
+    </div>
+  );
 }
