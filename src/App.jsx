@@ -42,7 +42,6 @@ function App() {
     <>
       <Navbar onScrollToSection={scrollToSection} />
       <Language />
-
       <Portfolio />
     </>
   );

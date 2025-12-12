@@ -1,0 +1,194 @@
+/* ===== Section ===== */
+.project-section {
+  min-height: 100vh;
+  padding: 80px 6vw;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 95px;
+}
+
+.project-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 28%, rgba(0, 255, 76, 0.12) 0 1px, transparent 2px),
+    radial-gradient(circle at 65% 55%, rgba(255, 255, 255, 0.07) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(0, 255, 76, 0.10) 0 1px, transparent 2px);
+  background-size: 280px 280px, 360px 360px, 420px 420px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ===== Title ===== */
+.project-title {
+  font-size: 3rem;
+  padding-top: 20px;
+  text-shadow: 0 0 15px #00ff4c;
+  display: inline-block;
+  transition: 0.25s ease;
+  color: #00ff4c;
+}
+
+.project-title:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 25px #00ff4c;
+}
+
+/* ===== Lista ===== */
+.project-image-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 44px;
+}
+
+/* ===== Card ===== */
+.project-image-description-container {
+  position: relative;
+  display: grid;
+
+  /* Recorta el hover de la imagen para que no “agrande todo” */
+  overflow: hidden;
+  border-radius: 10px;
+
+  /* imagen izq + info der */
+  grid-template-columns: minmax(520px, 1.25fr) 1fr;
+  column-gap: 72px;
+  row-gap: 14px;
+
+  align-items: start;
+  padding: 28px 10px;
+}
+
+/* bloque verde grande detrás */
+.project-image-description-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 62%;
+  height: 360px;
+
+  background: #00ff4c;
+  opacity: 0.20;
+  border-radius: 10px;
+
+  box-shadow: 0 0 48px rgba(0, 255, 76, 0.22);
+  z-index: 0;
+}
+
+/* ===== Imagen ===== */
+.project-image-description-container > img {
+  grid-column: 1;
+  grid-row: 1 / span 6;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 820px;
+  display: block;
+
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 76, 0.18);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.70);
+
+  margin-left: 18px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  will-change: transform;
+}
+
+/* hover suave sin “agrandar el layout” */
+.project-image-description-container:hover > img {
+  transform: translateY(-6px) scale(1.01) rotate(-0.2deg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75), 0 0 25px rgba(0, 255, 76, 0.20);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+/* ===== Título del proyecto ===== */
+.project-image-description-container > h1 {
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 1;
+
+  margin: 0 0 8px;
+  color: #eaffef;
+  font-size: clamp(26px, 2.6vw, 44px);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* ===== Descripción ===== */
+.project-image-description-container > p {
+  grid-column: 2;
+  z-index: 1;
+
+  margin: 0 0 14px;
+  max-width: 560px;
+
+  color: rgba(234, 255, 239, 0.82);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+/* ===== Links ===== */
+.project-image-description-container > a {
+  grid-column: 2;
+  z-index: 1;
+
+  width: fit-content;
+  display: inline-block;
+
+  margin-top: 10px;
+  padding: 10px 0;
+
+  color: #eaffef;
+  text-decoration: none;
+
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  border-bottom: 2px solid #00ff4c;
+  transition: transform 0.15s ease, text-shadow 0.15s ease;
+}
+
+.project-image-description-container > a:hover {
+  transform: translateX(6px);
+  text-shadow: 0 0 14px rgba(0, 255, 76, 0.35);
+}
+
+/* separación entre los dos links */
+.project-image-description-container > a + a {
+  margin-top: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .project-image-description-container {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 18px;
+  }
+
+  .project-image-description-container::before {
+    width: 100%;
+    height: 280px;
+    top: 0;
+  }
+
+  .project-image-description-container > img {
+    grid-column: 1;
+    grid-row: auto;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .project-image-description-container > h1,
+  .project-image-description-container > p,
+  .project-image-description-container > a {
+    grid-column: 1;
+  }
+}
