@@ -4,8 +4,18 @@
 .about-section {
     color: #00ff4c;
     text-align: center;
+    min-height: 100vh;
+    height: auto;
+    margin-top: 95px;
   }
   
+  .skills-section{
+    margin-top: 95px;
+    color: #00ff4c;
+    text-align: center;
+    min-height: 100vh;
+    height: auto;
+  }
   .about-title {
     font-size: 3rem;
     padding-top: 20px;
@@ -18,22 +28,29 @@
     transform: scale(1.08);
     text-shadow: 0 0 25px #00ff4c;   
   }
+
+
   .about-info-section {
     display: flex;
     flex-direction: row;
     gap: 40px;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 40px;
+   margin-top: 40px;
   }
   
+  .about-left-section{
+    justify-content: center;
+    align-content: center;
+    height: auto;
+  }
   
   /* ============================= */
   /*             FOTO              */
   /* ============================= */
   .about-photo {
     width: 50vh;
-    height: 80vh;
+    height: 60vh;
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid #00ff4c;
@@ -60,13 +77,19 @@
   /* ============================= */
   /*          TÍTULO SKILLS        */
   /* ============================= */
-  .skills-title {
-    margin-top: 25px;
-    font-size: 2rem;
-    text-shadow: 0 0 10px #00ff4c;
+  .skills-title{
+    font-size: 3rem;
+    padding-top: 20px;
+    text-shadow: 0 0 15px #00ff4c;
+    display: inline-block;     
+    transition: 0.25s ease; 
     color: #00ff4c;
   }
-  
+
+  .skills-title:hover{
+    transform: scale(1.08);
+    text-shadow: 0 0 25px #00ff4c;  
+  }
   
   /* ============================= */
   /*        SKILLS EN CÍRCULO      */
@@ -82,10 +105,9 @@
   /* ============================= */
   /*         SKILL CARD BASE       */
   /* ============================= */
+
   .skills-circle .skill-card {
     position: absolute;
-    width: 120px;
-    height: 120px;
     background: rgba(0, 20, 0, 0.7);
     border: 2px solid #00ff4c;
     border-radius: 12px;
@@ -122,73 +144,84 @@
   
   
   /* ============================= */
-  /*     POSICIONES DEL CÍRCULO    */
-  /* ============================= */
-  
-  .skills-circle {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    margin-top: 30px;
-  }
-  
-  .skills-circle .skill-card {
-    width: 120px;
-    height: 120px;
-  }
-  
-  /* Top */
-  .skills-circle .skill-card:nth-child(1) {
-    top: 10px;
-    left: 190px;
-  }
-  
-  /* Top-Right */
-  .skills-circle .skill-card:nth-child(2) {
-    top: 90px;
-    left: 330px;
-  }
-  
-  /* Right */
-  .skills-circle .skill-card:nth-child(3) {
-    top: 200px;
-    left: 380px;
-  }
-  
-  /* Bottom-Right */
-  .skills-circle .skill-card:nth-child(4) {
-    top: 320px;
-    left: 330px;
-  }
-  
-  /* Bottom */
-  .skills-circle .skill-card:nth-child(5) {
-    top: 370px;
-    left: 190px;
-  }
-  
-  /* Bottom-Left */
-  .skills-circle .skill-card:nth-child(6) {
-    top: 320px;
-    left: 50px;
-  }
-  
-  /* Left */
-  .skills-circle .skill-card:nth-child(7) {
-    top: 200px;
-    left: 0px;
-  }
-  
-  /* Top-Left */
-  .skills-circle .skill-card:nth-child(8) {
-    top: 90px;
-    left: 50px;
-  }
-  
-  /* Center */
-  .skills-circle .skill-card:nth-child(9) {
-    top: 190px;
-    left: 190px;
-  }
-  
+/*     POSICIONES DEL CÍRCULO    */
+/* ============================= */
+
+.skills-circle {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin-top: 30px;
+}
+
+/* Tamaño nuevo de tarjetas */
+.skills-circle .skill-card {
+  width: 90px;
+  height: 90px;
+}
+
+/* Ajuste iconos/texto para el nuevo tamaño */
+.skills-circle .skill-card img {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 6px;
+}
+
+.skills-circle .skill-card span {
+  font-size: 0.78rem;
+}
+
+/* Top */
+.skills-circle .skill-card:nth-child(1) {
+  top: 25px;
+  left: 205px;
+}
+
+/* Top-Right */
+.skills-circle .skill-card:nth-child(2) {
+  top: 105px;
+  left: 345px;
+}
+
+/* Right */
+.skills-circle .skill-card:nth-child(3) {
+  top: 215px;
+  left: 395px;
+}
+
+/* Bottom-Right */
+.skills-circle .skill-card:nth-child(4) {
+  top: 335px;
+  left: 345px;
+}
+
+/* Bottom */
+.skills-circle .skill-card:nth-child(5) {
+  top: 385px;
+  left: 205px;
+}
+
+/* Bottom-Left */
+.skills-circle .skill-card:nth-child(6) {
+  top: 335px;
+  left: 65px;
+}
+
+/* Left */
+.skills-circle .skill-card:nth-child(7) {
+  top: 215px;
+  left: 15px;
+}
+
+/* Top-Left */
+.skills-circle .skill-card:nth-child(8) {
+  top: 105px;
+  left: 65px;
+}
+
+/* Center */
+.skills-circle .skill-card:nth-child(9) {
+  top: 205px;
+  left: 205px;
+}
   

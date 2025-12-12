@@ -1,7 +1,7 @@
 import { useLanguage } from "../../hooks/useLanguage";
 import { translations } from "../../i18n/translations";
 import "./Navbar.css";
-import { FiHome, FiUser, FiFolder, FiMail } from "react-icons/fi";
+import { FiHome, FiUser, FiFolder, FiMail, FiTerminal } from "react-icons/fi";
 
 export default function Navbar({ onScrollToSection }) {
   const { language } = useLanguage();
@@ -25,7 +25,13 @@ export default function Navbar({ onScrollToSection }) {
         </li>
 
         <li>
-          <button className="nav-btn">
+          <button  onClick={() => onScrollToSection("skills")}className="nav-btn">
+            <FiTerminal  className="navbar-icon" />
+            {translations[language].skills}
+          </button>
+        </li>
+        <li>
+          <button onClick={()=> onScrollToSection("project")} className="nav-btn">
             <FiFolder className="navbar-icon" />
             {translations[language].projects}
           </button>
