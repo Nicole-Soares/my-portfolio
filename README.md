@@ -1,16 +1,80 @@
-# React + Vite
+#  🌐 Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website showcasing my projects, skills, and experience as a full-stack developer.
+Designed with a clean, modern UI and smooth animations, fully responsive across desktop and mobile devices.
 
-Currently, two official plugins are available:
+##  🚀 Live Demo
+Link: https://nicolesoares.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img width="1913" height="951" alt="image" src="/public/screenproject.png" />
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  🛠️ Tech Stack
+Frontend
 
-## Expanding the ESLint configuration
+- React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Vite
+
+- CSS3
+
+- i18n (custom translations system)
+
+- EmailJS – contact form email delivery
+
+- Vercel – deployment & hosting
+
+##  ✨ Features
+
+- Responsive design (desktop, tablet, mobile)
+
+- Mobile bottom navigation bar
+
+- Smooth scroll navigation between sections
+
+- Scroll-based reveal animations
+
+- Multi-language support
+
+- Interactive skills visualization
+
+- Fully functional contact form (EmailJS)
+
+- Clean and modern UI inspired by cyber / matrix aesthetics
+
+##  📂 Sections
+
+- Home – Introduction and call to action
+
+- About – Personal background and profile
+
+- Skills – Technical skills visualization
+
+- Projects – Selected projects with descriptions and repositories
+
+- Contact – Contact form with email integration
+
+##  ⚙️ Environment Variables
+
+To enable the contact form locally, create a .env file in the root directory:
+
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
+🧪 Running Locally
+# Install dependencies
+```bash
+npm install
+```
+
+# Start development server
+```bash
+npm run dev
+```
+
+##  📌 Author
+
+Nicole Soares
+Full-Stack Developer
+📫 Feel free to reach out via the contact form or GitHub.

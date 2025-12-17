@@ -1,4 +1,5 @@
 import trivia from "../assets/projects/trivia.png";
+import instagram from "../assets/projects/instagram.png";
 export const translations = {
   // --- ESPAÑOL (ES) ---
   Spanish: {
@@ -25,24 +26,35 @@ export const translations = {
     about_text_p2:
       "Actualmente, mi foco está en el desarrollo con React y Node.js, donde combino la lógica con la creación de interfaces modernas. Estoy siempre buscando el próximo desafío para aplicar mis conocimientos.",
     about_technical_skills: "Habilidades Técnicas",
-   
-   
+
     // Sección Poject
-    project_title:"Proyectos",
-    listProject:[
-        {
-          id: "trivia",
-          src: trivia,
-          name: "Trivia Game",
-          description:
-            "Juego inspirado en el Preguntados, se realiazo el front con react + vite, consumiendo apis mediante fetch y subido a un servidor",
-          liveUrl: "https://unq-ui-nicole-soares-trabajo-final.vercel.app/",
-          repoUrl: "https://github.com/Nicole-Soares/unq-ui-nicole-soares-trabajo-final",
-        },
-      ],
-     project_live:"APP EN VIVO",
-    project_more: "MÁS INFORMACIÓN"
-    
+    project_title: "Proyectos",
+    listProject: [
+      {
+        id: "trivia",
+        src: trivia,
+        name: "Trivia Game",
+        description:
+          "Juego inspirado en el Preguntados, se realiazo el front con react + vite, consumiendo apis mediante fetch y subido a un servidor",
+        repoUrl:
+          "https://github.com/Nicole-Soares/unq-ui-nicole-soares-trabajo-final",
+      },
+      {
+        id: "instagram",
+        src: instagram,
+        name: "Instagram clone",
+        description:
+          "Red social inspirada en Instagram. Incluye versión web (React + Vite) y mobile (React Native + Expo), ambas consumiendo una API propia mediante Axios/Fetch. Backend desarrollado en Node.js + Express con endpoints para autenticación, usuarios, publicaciones e interacciones.",
+        repoUrl: "https://github.com/Nicole-Soares/instagram-inspired-clone",
+      },
+    ],
+    project_more: "MÁS INFORMACIÓN",
+
+    //boton contacto
+    contact_name: "Nombre",
+    contact_email: "Email",
+    contact_message: "Mensaje",
+    contact_submit: "Enviar",
   },
 
   // --- ENGLISH (EN) ---
@@ -72,19 +84,32 @@ export const translations = {
     about_technical_skills: "Technical Skills",
 
     // Sección Poject
-    project_title:"Projects",
-    listProject:[
+    project_title: "Projects",
+    listProject: [
       {
         id: "trivia",
         src: trivia,
         name: "Trivia Game",
         description:
-        "Game inspired by Preguntados, with the frontend built using React + Vite, consuming APIs via fetch and deployed to a server.",
-        liveUrl: "https://unq-ui-nicole-soares-trabajo-final.vercel.app/",
-        repoUrl: "https://github.com/Nicole-Soares/unq-ui-nicole-soares-trabajo-final",
+          "Game inspired by Preguntados, with the frontend built using React + Vite, consuming APIs via fetch and deployed to a server.",
+        repoUrl:
+          "https://github.com/Nicole-Soares/unq-ui-nicole-soares-trabajo-final",
+      },
+      {
+        id: "instagram",
+        src: instagram,
+        name: "Instagram clone",
+        description:
+          "Social network inspired by Instagram. Includes both a web version (React + Vite) and a mobile version (React Native + Expo), each consuming a custom API via Axios/Fetch. The backend is developed in Node.js with Express, providing endpoints for authentication, users, posts, and interactions.",
+        repoUrl: "https://github.com/Nicole-Soares/instagram-inspired-clone",
       },
     ],
-    project_live:"LIVE APP",
-    project_more: "LEARN MORE"
+    project_more: "LEARN MORE",
+    
+    //boton contacto
+    contact_name: "Name",
+    contact_email: "Email",
+    contact_message: "Message",
+    contact_submit: "Send",
   },
 };

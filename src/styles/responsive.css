@@ -1,0 +1,15 @@
+/* ============================= */
+/*        MOBILE (<=600px)   */
+/* ============================= */
+@media (max-width: 600px) {
+    .about-section,
+    .skills-section,
+    .project-section,
+    .contact-section {
+      min-height: auto;
+      margin-top: 40px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+  

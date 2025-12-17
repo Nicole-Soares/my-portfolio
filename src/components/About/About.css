@@ -2,148 +2,165 @@
 /*        SECCIÓN GENERAL        */
 /* ============================= */
 .about-section {
-    color: #00ff4c;
-    text-align: center;
-    min-height: 100vh;
-    height: auto;
-    margin-top: 95px;
-  }
-  
-  .skills-section{
-    margin-top: 95px;
-    color: #00ff4c;
-    text-align: center;
-    min-height: 100vh;
-    height: auto;
-  }
-  .about-title {
-    font-size: 3rem;
-    padding-top: 20px;
-    text-shadow: 0 0 15px #00ff4c;
-    display: inline-block;     
-    transition: 0.25s ease; 
-  }
-  
-  .about-title:hover {
-    transform: scale(1.08);
-    text-shadow: 0 0 25px #00ff4c;   
-  }
+  color: #00ff4c;
+  text-align: center;
+  min-height: 100vh;
+  margin-top: 95px;
+  opacity: 0;
+  transform: translateX(-60px);
+}
 
+.about-section.animate {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
 
-  .about-info-section {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    justify-content: center;
-    align-items: flex-start;
-   margin-top: 40px;
-  }
-  
-  .about-left-section{
-    justify-content: center;
-    align-content: center;
-    height: auto;
-  }
-  
-  /* ============================= */
-  /*             FOTO              */
-  /* ============================= */
-  .about-photo {
-    width: 50vh;
-    height: 60vh;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #00ff4c;
-    box-shadow: 0 0 20px #00ff4c;
-  }
-  
-  
-  /* ============================= */
-  /*        DESCRIPCIÓN TEXTO      */
-  /* ============================= */
-  .about-description {
-    max-width: 500px;
-    text-align: left;
-  }
-  
-  .about-text {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: #c8ffea;
-  }
-  
-  
-  /* ============================= */
-  /*          TÍTULO SKILLS        */
-  /* ============================= */
-  .skills-title{
-    font-size: 3rem;
-    padding-top: 20px;
-    text-shadow: 0 0 15px #00ff4c;
-    display: inline-block;     
-    transition: 0.25s ease; 
-    color: #00ff4c;
-  }
+.skills-section {
+  margin-top: 95px;
+  color: #00ff4c;
+  text-align: center;
+  min-height: 100vh;
+  height: auto;
+  opacity: 0;
+  transform: translateX(-60px);
+}
 
-  .skills-title:hover{
-    transform: scale(1.08);
-    text-shadow: 0 0 25px #00ff4c;  
-  }
-  
-  /* ============================= */
-  /*        SKILLS EN CÍRCULO      */
-  /* ============================= */
-  .skills-circle {
-    position: relative;
-    width: 450px;
-    height: 450px;
-    margin-top: 30px;
-  }
-  
-  
-  /* ============================= */
-  /*         SKILL CARD BASE       */
-  /* ============================= */
+.skills-section.animate {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
 
-  .skills-circle .skill-card {
-    position: absolute;
-    background: rgba(0, 20, 0, 0.7);
-    border: 2px solid #00ff4c;
-    border-radius: 12px;
-    box-shadow: 0 0 15px #00ff4c55;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.25s ease;
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
   }
-  
-  .skills-circle .skill-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #00ff4c;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  
-  /* ============================= */
-  /*           ICONOS              */
-  /* ============================= */
-  .skills-circle .skill-card img {
-    width: 45px;
-    height: 45px;
-    margin-bottom: 8px;
-    object-fit: contain;
-  }
-  
-  .skills-circle .skill-card span {
-    color: #eafff5;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-shadow: 0 0 5px #00ff4c;
-  }
-  
-  
-  /* ============================= */
+}
+
+.about-title {
+  font-size: 3rem;
+  padding-top: 20px;
+  text-shadow: 0 0 15px #00ff4c;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.about-title:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 25px #00ff4c;
+}
+
+.about-info-section {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.about-left-section {
+  justify-content: center;
+  align-content: center;
+  height: auto;
+}
+
+/* ============================= */
+/*             FOTO              */
+/* ============================= */
+.about-photo {
+  width: 50vh;
+  height: 60vh;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #00ff4c;
+  box-shadow: 0 0 20px #00ff4c;
+}
+
+/* ============================= */
+/*        DESCRIPCIÓN TEXTO      */
+/* ============================= */
+.about-description {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-text {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #c8ffea;
+}
+
+/* ============================= */
+/*          TÍTULO SKILLS        */
+/* ============================= */
+.skills-title {
+  font-size: 3rem;
+  padding-top: 20px;
+  text-shadow: 0 0 15px #00ff4c;
+  display: inline-block;
+  transition: 0.25s ease;
+  color: #00ff4c;
+}
+
+.skills-title:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 25px #00ff4c;
+}
+
+/* ============================= */
+/*        SKILLS EN CÍRCULO      */
+/* ============================= */
+.skills-circle {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin-top: 30px;
+}
+
+/* ============================= */
+/*         SKILL CARD BASE       */
+/* ============================= */
+
+.skills-circle .skill-card {
+  position: absolute;
+  background: rgba(0, 20, 0, 0.7);
+  border: 2px solid #00ff4c;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ff4c55;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.skills-circle .skill-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #00ff4c;
+}
+
+/* ============================= */
+/*           ICONOS              */
+/* ============================= */
+.skills-circle .skill-card img {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+
+.skills-circle .skill-card span {
+  color: #eafff5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-shadow: 0 0 5px #00ff4c;
+}
+
+/* ============================= */
 /*     POSICIONES DEL CÍRCULO    */
 /* ============================= */
 
@@ -224,4 +241,96 @@
   top: 205px;
   left: 205px;
 }
+
+/* ============================= */
+/*         TABLET (<=1024px)     */
+/* ============================= */
+@media (max-width: 1024px) {
+  .about-info-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .about-description {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .about-photo {
+    width: 40vh;
+    height: 50vh;
+  }
+
+  .skills-section {
+    min-height: auto;
+    padding-bottom: 80px; /* separación controlada */
+  }
   
+  .skills-circle {
+    width: 380px;
+    height: 380px;
+  }
+
+  .skills-circle .skill-card {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ============================= */
+/*         MOBILE (<=600px)      */
+/* ============================= */
+@media (max-width: 600px) {
+  
+  .about-section {
+    margin-top: 70px;
+    padding: 0 20px;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .about-photo {
+    width: 260px;
+    height: 320px;
+  }
+
+  .about-description {
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .skills-circle {
+    position: static;
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    margin: 40px auto 0;
+  }
+
+  .skills-circle .skill-card {
+    position: static;
+    width: 100%;
+    height: 90px;
+  }
+
+  /* anulamos posiciones absolutas */
+  .skills-circle .skill-card:nth-child(n) {
+    top: auto;
+    left: auto;
+  }
+
+  .skills-title {
+    font-size: 2.2rem;
+  }
+}

@@ -9,10 +9,24 @@
     justify-content: center;
     text-align: center;
     gap: 20px; /* separación suave */
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+
+
+@keyframes slideInFromLeft {
+   0%{
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Título principal */
-.portfolio-name {
+.portfolio-name .English {
     color: white;
     font-size: 3.5rem;
     font-family: "Share Tech Mono", monospace;
@@ -20,6 +34,13 @@
     margin: 0;
 }
 
+.portfolio-name .Spanish {
+    color: white;
+    font-size: 3.5rem;
+    font-family: "Share Tech Mono", monospace;
+    letter-spacing: 3px;
+    margin: 0;
+}
 /* Destacado */
 .word-feature {
     color: #00ff4c;

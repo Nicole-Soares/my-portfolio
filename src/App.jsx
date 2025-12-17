@@ -5,7 +5,7 @@ import Loader from "./components/Loader/Loader";
 import About from "./components/About/About";
 import Navbar from "./components/navbar/Navbar";
 import Language from "./components/Language/Language";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./styles/responsive.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

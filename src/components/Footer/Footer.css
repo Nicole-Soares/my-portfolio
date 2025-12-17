@@ -1,0 +1,81 @@
+.footer{
+    width: 100%;
+    background: rgba(255,255,255,0.10);
+    border-top: 1px solid rgba(0,255,76,0.10);
+    padding: 26px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  /* Botón subir */
+  .to-top-btn{
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+  
+    background: #00ff4c;
+    border: none;
+    border-radius: 8px;
+  
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,255,76,0.25);
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  
+  .to-top-btn svg{
+    font-size: 22px;
+    color: #0b0f0d;
+  }
+  
+  .to-top-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(0,255,76,0.35);
+    filter: brightness(1.05);
+  }
+  
+  /* Iconos */
+  .footer-icons{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-icon{
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+  
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(0,255,76,0.16);
+    border-radius: 50%;
+  
+    color: #eaffef;
+    text-decoration: none;
+  
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  
+  .footer-icon svg{
+    font-size: 18px;
+  }
+  
+  .footer-icon:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0,255,76,0.18);
+    border-color: rgba(0,255,76,0.40);
+  }
+  
+  /* Copy */
+  .footer-copy{
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(234,255,239,0.65);
+    text-transform: uppercase;
+  }
+  
