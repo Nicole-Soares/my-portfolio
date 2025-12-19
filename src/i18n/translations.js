@@ -1,5 +1,7 @@
 import trivia from "../assets/projects/trivia.png";
 import instagram from "../assets/projects/instagram.png";
+import epersgeist from "../assets/projects/epersgeist.png";
+
 export const translations = {
   // --- ESPAÑOL (ES) ---
   Spanish: {
@@ -46,6 +48,14 @@ export const translations = {
         description:
           "Red social inspirada en Instagram. Incluye versión web (React + Vite) y mobile (React Native + Expo), ambas consumiendo una API propia mediante Axios/Fetch. Backend desarrollado en Node.js + Express con endpoints para autenticación, usuarios, publicaciones e interacciones.",
         repoUrl: "https://github.com/Nicole-Soares/instagram-inspired-clone",
+      },
+      {
+        id: "epersgeist",
+        src: instagram,
+        name: "Epersgeost",
+        description:
+          "Servicio que gestiona Espiritus, Mediums y Ubicaciones. Permite que espiritus y medium se comuniquen entre sí a través de eventos (Kafka). Contiene sus propias APIs para la conexión a este servicio, además de funcionalidades extras del modelo y la persistencia (PostgreSQL, Mongo, Neo).",
+        repoUrl: "https://github.com/Nicole-Soares/epersgeist-distributed-persistence",
       },
     ],
     project_more: "MÁS INFORMACIÓN",
@@ -102,6 +112,13 @@ export const translations = {
         description:
           "Social network inspired by Instagram. Includes both a web version (React + Vite) and a mobile version (React Native + Expo), each consuming a custom API via Axios/Fetch. The backend is developed in Node.js with Express, providing endpoints for authentication, users, posts, and interactions.",
         repoUrl: "https://github.com/Nicole-Soares/instagram-inspired-clone",
+      },
+      {
+        id: "epersgeist",
+        src: epersgeist,
+        name: "Epersgeist",
+        description: "Service that manages Spirits, Mediums, and Locations. It allows spirits and mediums to communicate with each other through events (Kafka). It exposes its own APIs for connecting to this service, in addition to extra model and persistence functionalities (PostgreSQL, MongoDB, Neo4j).",
+        repoUrl: "https://github.com/Nicole-Soares/epersgeist-distributed-persistence",
       },
     ],
     project_more: "LEARN MORE",
