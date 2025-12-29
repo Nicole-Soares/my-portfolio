@@ -1,138 +1,186 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden; 
+}
+
+
 .loader-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    text-align: center;
-  }
-  
-  
-  /* ANIMACIÓN DEL TÍTULO */
-  .loader-title {
-    font-size: 48px;
-    letter-spacing: 4px;
-    color: white;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  gap: 18px;
+}
+
+
+.loader-title {
+  font-size: 48px;
+  letter-spacing: 4px;
+  color: white;
+  opacity: 0;
+  transform: translateY(0px);
+  animation: titleEnter 0.9s ease-out forwards;
+  margin: 0;
+}
+
+@keyframes titleEnter {
+  from {
     opacity: 0;
-    transform: translateY(40px);
-    animation: titleEnter 0.9s ease-out forwards;
+    transform: translateY(-40px);
   }
-  
-  @keyframes titleEnter {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .loader-bar {
-    width: 300px;
-    height: 20px;
-    background: #2f313a;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid #1f1f1f;
-  }
-  
-  .loader-fill {
-    height: 100%;
+}
+
+.loader-bar {
+  width: 300px;
+  height: 20px;
+  background: #2f313a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #1f1f1f;
+  margin-top: 16px;
+}
+
+.loader-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #f4f7f5, #9b9998, #000000);
+  border-radius: 12px;
+  animation: fillLoader 2s ease-in-out forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes fillLoader {
+  from {
     width: 0%;
-    background: linear-gradient(90deg, #f4f7f5, #9b9998, #000000);
-    border-radius: 12px;
-    animation: fillLoader 2s ease-in-out forwards;
-    animation-delay: 0.9s;
   }
-  
-  @keyframes fillLoader {
-    from { width: 0%; }
-    to { width: 100%; }
-  }
-  
-  /* ------------ GRID 3D CORRECTA (SCSS TRANSFORMADA) ------------ */
-  
-  .grid-container {
-    --grid: 10rem;
+  to {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-style: preserve-3d;
-    perspective: 100rem;
-    animation: rotate 100s linear infinite forwards;
   }
-  
-  .plane {
-    --dir: 1;
-    width: 300%;
-    height: 150%;
-    min-height: 70rem;
-    position: absolute;
-    bottom: 0;
-    transform-origin: bottom center;
-    transform: translateX(-50%) rotateX(85deg);
+}
+
+/* ========== GRID 3D ========== */
+.grid-container {
+  --grid: 10rem;
+  position: absolute;
+  inset: 0;
+  overflow: hidden; 
+  transform-style: preserve-3d;
+  perspective: 100rem;
+  animation: rotate 100s linear infinite forwards;
+  pointer-events: none;
+}
+
+.plane {
+  --dir: 1;
+  width: 300%;
+  height: 150%;
+  min-height: 70rem;
+  position: absolute;
+  left: 50%; 
+  bottom: 0;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotateX(85deg);
+}
+
+.plane:last-child {
+  --dir: -1;
+
+  position: absolute;
+  left: 50%; 
+  top: 0;
+
+  transform-origin: top center;
+  transform: translateX(-50%) rotateX(-85deg);
+}
+
+.plane .grid,
+.plane .glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.plane .grid::before,
+.plane .grid::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.plane .grid::before {
+  background-image: repeating-linear-gradient(
+      to left,
+      green,
+      green 4px,
+      transparent 4px,
+      transparent var(--grid)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      green,
+      green 4px,
+      transparent 4px,
+      transparent var(--grid)
+    );
+  animation: move 1s linear infinite forwards;
+}
+
+.plane .grid::after {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) var(--grid),
+    rgba(0, 0, 0, 0)
+  );
+  transform: translateZ(1px);
+}
+
+.plane:last-child .grid::after {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) var(--grid),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.glow {
+  filter: blur(1rem);
+  mix-blend-mode: plus-lighter;
+}
+
+/* Animaciones */
+@keyframes move {
+  from {
+    transform: translateY(0);
   }
-  
-  .plane:last-child {
-    --dir: -1;
-    top: 0;
-    transform-origin: top center;
-    transform: translateX(-50%) rotateX(-85deg);
+  to {
+    transform: translateY(calc(var(--grid) * var(--dir)));
   }
-  
-  .plane .grid,
-  .plane .glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg);
   }
-  
-  .plane .grid::before,
-  .plane .grid::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  to {
+    transform: rotateX(360deg);
   }
-  
-  .plane .grid::before {
-    background-image:
-      repeating-linear-gradient(to left, green, green 4px, transparent 4px, transparent var(--grid)),
-      repeating-linear-gradient(to bottom, green, green 4px, transparent 4px, transparent var(--grid));
-    animation: move 1s linear infinite forwards;
-  }
-  
-  .plane .grid::after {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,1) var(--grid), rgba(0,0,0,0));
-    transform: translateZ(1px);
-  }
-  
-  .plane:last-child .grid::after {
-    background-image: linear-gradient(to top, rgba(0,0,0,1) var(--grid), rgba(0,0,0,0));
-  }
-  
-  .glow {
-    filter: blur(1rem);
-    mix-blend-mode: plus-lighter;
-  }
-  
-  /* Animaciones */
-  @keyframes move {
-    from { transform: translateY(0); }
-    to { transform: translateY(calc(var(--grid) * var(--dir))); }
-  }
-  
-  @keyframes rotate {
-    from { transform: rotateX(0deg); }
-    to { transform: rotateX(360deg); }
-  }
-  
-  .loader-container,
-  .grid-container,
-  .grid-container * {
-      pointer-events: none !important;
-  }
+}
+
+
+.loader-overlay,
+.grid-container,
+.grid-container * {
+  pointer-events: none !important;
+}

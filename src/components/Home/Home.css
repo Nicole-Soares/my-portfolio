@@ -1,5 +1,4 @@
 
-/* El contenido se separa de la navbar */
 .home-container {
     margin-top: 80px; 
     min-height: 100vh;
@@ -8,7 +7,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 20px; /* separación suave */
+    gap: 20px; 
     animation: slideInFromLeft 0.8s ease-out forwards;
 }
 
